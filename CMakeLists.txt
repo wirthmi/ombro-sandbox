@@ -33,12 +33,23 @@ target_include_directories(
 find_package( Boost 1.58.0 REQUIRED )
 
 if( find_dependencies )
+
   message( "-- Consider using: -DCMAKE_PREFIX_PATH=<path>" )
+
   find_package( aToolbox QUIET CONFIG )
+  find_package( OmbroBase QUIET CONFIG )
+
 else( )
+
   message( "-- Consider using: -Dfind_dependencies=ON" )
+
   add_subdirectory( lib/atb/ )
   add_dependencies( ombro-sandbox atb )
+
+  add_subdirectory( lib/ombro_base/ )
+  add_dependencies( ombro_base atb )
+  add_dependencies( ombro-sandbox ombro_base )
+
 endif( )
 
 target_link_libraries(
