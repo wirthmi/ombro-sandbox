@@ -1,0 +1,3 @@
+[submodule "lib/atb"]
+	path = lib/atb
+	url = https://github.com/wirthmi/libatb.git
