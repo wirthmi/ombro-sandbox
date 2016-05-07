@@ -38,6 +38,7 @@ if( find_dependencies )
 
   find_package( aToolbox QUIET CONFIG )
   find_package( OmbroBase QUIET CONFIG )
+  find_package( OmbroIO QUIET CONFIG )
 
 else( )
 
@@ -50,12 +51,18 @@ else( )
   add_dependencies( ombro_base atb )
   add_dependencies( ombro-sandbox ombro_base )
 
+  add_subdirectory( lib/ombro_io/ )
+  add_dependencies( ombro_io atb ombro_base )
+  add_dependencies( ombro-sandbox ombro_io )
+
 endif( )
 
 target_link_libraries(
   ombro-sandbox
   ${Boost_LIBRARIES}
   atb
+  ombro_base
+  ombro_io
 )
 
 

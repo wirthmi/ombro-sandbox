@@ -4,3 +4,6 @@
 [submodule "lib/ombro_base"]
 	path = lib/ombro_base
 	url = https://github.com/wirthmi/libombro_base.git
+[submodule "lib/ombro_io"]
+	path = lib/ombro_io
+	url = https://github.com/wirthmi/libombro_io.git
