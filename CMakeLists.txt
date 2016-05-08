@@ -5,11 +5,12 @@ cmake_minimum_required( VERSION 3.5.0 )
 
 project( OmbroSandbox )
 
+message( "-- Consider using: -DCMAKE_BUILD_TYPE=<type>" )
+
 if( NOT CMAKE_BUILD_TYPE )
   set( CMAKE_BUILD_TYPE Release )
 endif( )
 
-message( "-- Consider using: -DCMAKE_BUILD_TYPE=<type>" )
 message( "-- Current build type: ${CMAKE_BUILD_TYPE}" )
 
 
