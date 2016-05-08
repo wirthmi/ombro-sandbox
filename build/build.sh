@@ -5,6 +5,10 @@ set -e
 build_directory="`dirname "$0"`"
 install_directory="`pwd`"
 
+if uname -o | grep -i 'cygwin' > /dev/null; then
+  install_directory="`cygpath -w "$install_directory"`"
+fi
+
 cd "$build_directory"
 
 # at first configure
