@@ -57,6 +57,11 @@ else( )
 
 endif( )
 
+target_include_directories(
+  ombro-sandbox
+  PUBLIC ${Boost_INCLUDE_DIRS}
+)
+
 target_link_libraries(
   ombro-sandbox
   ${Boost_LIBRARIES}
